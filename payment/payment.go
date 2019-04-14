@@ -4,7 +4,6 @@ package payment
 import (
 	"encoding/xml"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strconv"
