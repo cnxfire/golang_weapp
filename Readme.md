@@ -21,6 +21,7 @@
   - [发送客服消息](#发送客服消息)
 - [支付](#支付)
   - [付款](#付款)
+  - [查询订单完成状态](#查询订单)
   - [处理支付结果通知](#处理支付结果通知)
   - [退款](#退款)
   - [处理退款结果通知](#处理退款结果通知)
@@ -446,7 +447,16 @@ if err != nil {
 }
 
 ```
-
+### 查询订单状态
+[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_2)
+```go
+form := payment.OrderQuery{
+		AppID:      "Appid",
+		MchID:      "MchId",
+		OutTradeNo: "orderNo",
+	}
+res,err:=form.Unify("支付密钥")
+```
 ### 处理支付结果通知
 
 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_7&index=8)
