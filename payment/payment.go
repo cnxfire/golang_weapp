@@ -110,7 +110,6 @@ func (qo *OrderQuery) prequery(key string) (orderQuery, error) {
 		return qod, err
 	}
 	qod.Sign = sign
-	fmt.Print(qod)
 	return qod, nil
 }
 
