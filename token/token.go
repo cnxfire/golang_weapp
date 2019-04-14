@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/medivhzhan/weapp"
+	"github.com/cnxfire/golang_weapp"
 )
 
 const tokenAPI = "/cgi-bin/token"

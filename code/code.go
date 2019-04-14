@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/medivhzhan/weapp"
-	"github.com/medivhzhan/weapp/util"
+	"github.com/cnxfire/golang_weapp"
+	"github.com/cnxfire/golang_weapp/util"
 )
 
 const (

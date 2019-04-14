@@ -1,1 +1,1 @@
-module github.com/medivhzhan/weapp
+module github.com/cnxfire/golang_weapp

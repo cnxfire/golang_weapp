@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/medivhzhan/weapp/util"
+	"github.com/cnxfire/golang_weapp/util"
 )
 
 const (

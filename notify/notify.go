@@ -9,8 +9,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/medivhzhan/weapp/message"
-	"github.com/medivhzhan/weapp/util"
+	"github.com/cnxfire/golang_weapp/message"
+	"github.com/cnxfire/golang_weapp/util"
 )
 
 // Server 微信服务接收器

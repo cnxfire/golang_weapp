@@ -39,7 +39,7 @@
 
 ```sh
 
-go get -u github.com/medivhzhan/weapp
+go get -u github.com/cnxfire/golang_weapp
 
 ```
 
@@ -49,7 +49,7 @@ go get -u github.com/medivhzhan/weapp
 
 ```go
 
-import "github.com/medivhzhan/weapp/token"
+import "github.com/cnxfire/golang_weapp/token"
 
 // 获取次数有限制 获取后请缓存
 tok, exp, err := token.AccessToken(appID, secret string)
@@ -62,7 +62,7 @@ tok, exp, err := token.AccessToken(appID, secret string)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // @appID 小程序 appID
 // @secret 小程序的 app secret
@@ -92,7 +92,7 @@ fmt.Printf("返回结果: %#v", res)
 
 ```go
 
-import "github.com/medivhzhan/weapp/code"
+import "github.com/cnxfire/golang_weapp/code"
 
 coder := code.QRCoder {
     Path: "pages/index?query=1", // 识别二维码后进入小程序的页面链接
@@ -145,7 +145,7 @@ defer res.Body.Close()
 
 ```go
 
-import "github.com/medivhzhan/weapp/code"
+import "github.com/cnxfire/golang_weapp/code"
 
 coder := code.QRCoder {
     Path: "pages/index?query=1", // 识别二维码后进入小程序的页面链接
@@ -172,7 +172,7 @@ defer res.Body.Close()
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 // 获取小程序模板库标题列表
 // offset: 开始获取位置 从0开始
@@ -186,7 +186,7 @@ list, total, err := template.List(offset uint, count uint, token string)
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 // 获取帐号下已存在的模板列表
 // offset: 开始获取位置 从0开始
@@ -199,7 +199,7 @@ list, total, err := template.Selves(offset uint, count uint, token string)
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 // 获取模板库某个模板标题下关键词库
 // id: 模板ID
@@ -212,7 +212,7 @@ keywords, err := template.Get(id, token string)
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 // 组合模板并添加至帐号下的个人模板库
 // id: 模板ID
@@ -227,7 +227,7 @@ tid, err := template.Add(id, token string, keywordIDList []uint)
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 // 删除帐号下的某个模板
 // id: 模板ID
@@ -240,7 +240,7 @@ err := template.Delete(id, token string)
 
 ```go
 
-import "github.com/medivhzhan/weapp/message/template"
+import "github.com/cnxfire/golang_weapp/message/template"
 
 msg := template.Message{
     "keyword1": "content ...",
@@ -296,7 +296,7 @@ msg := template.UniformMsg{
     MPTemplateMsg: template.MPTemplateMsg{
         AppID:      "wx2c5a33d31b4ee88f",
         TemplateID: "UmuX15eBoonYkLy-7Xle1rA6xHhv4bsbie1Viidg2Cs",
-        URL:        "https://medivhzhan.me",
+        URL:        "https://cnxfire.me",
         Miniprogram: template.Miniprogram{
             AppID:    "wx7ad9cfdc85a2fdb2",
             Pagepath: "pages/me/main",
@@ -332,7 +332,7 @@ err := msg.Send(token)
 
 ```go
 
-import "github.com/medivhzhan/weapp/notify"
+import "github.com/cnxfire/golang_weapp/notify"
 
 // 新建服务
 srv := notify.NewServer(http.ResponseWriter, *http.Request)
@@ -364,7 +364,7 @@ err := srv.Serve()
 
 ```go
 
-import "github.com/medivhzhan/weapp/message"
+import "github.com/cnxfire/golang_weapp/message"
 
 // 文本消息
 msg := message.Text{
@@ -408,7 +408,7 @@ res, err := msg.SendTo(openid, token string)
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 新建支付订单
 form := payment.Order{
@@ -463,7 +463,7 @@ res,err:=form.Unify("支付密钥")
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 必须在下单时指定的 notify_url 的路由处理器下
 err := payment.HandlePaidNotify(w http.ResponseWriter, req *http.Request,  func(ntf payment.PaidNotify) (bool, string) {
@@ -483,7 +483,7 @@ err := payment.HandlePaidNotify(w http.ResponseWriter, req *http.Request,  func(
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 新建退款订单
 form := payment.Refunder{
@@ -518,7 +518,7 @@ fmt.Printf("返回结果: %#v", res)
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 必须在商户平台上配置的回调地址或者发起退款时指定的 notify_url 的路由处理器下
 err := payment.HandleRefundedNotify(w http.ResponseWriter, req *http.Request,  "支付密钥", func(ntf payment.RefundedNotify) (bool,         // 处理通知
@@ -537,7 +537,7 @@ err := payment.HandleRefundedNotify(w http.ResponseWriter, req *http.Request,  "
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 新建退款订单
 form := payment.Transferer{
@@ -574,7 +574,7 @@ fmt.Printf("返回结果: %#v", res)
 
 ```go
 
-import "github.com/medivhzhan/weapp/payment"
+import "github.com/cnxfire/golang_weapp/payment"
 
 // 新建退款订单
 form := payment.TransferInfo{
@@ -604,7 +604,7 @@ fmt.Printf("返回结果: %#v", res)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // 解密手机号码
 //
@@ -623,7 +623,7 @@ fmt.Printf("手机数据: %#v", phone)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // 解密转发信息的加密数据
 //
@@ -642,7 +642,7 @@ openGid , err := weapp.DecryptShareInfo(ssk, data, iv string)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // 解密用户信息
 //
@@ -670,7 +670,7 @@ fmt.Printf("用户数据: %#v", ui)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // 本地图片检测
 //
@@ -702,7 +702,7 @@ fmt.Printf("返回结果: %#v", res)
 
 ```go
 
-import "github.com/medivhzhan/weapp"
+import "github.com/cnxfire/golang_weapp"
 
 // 文本检测
 //
